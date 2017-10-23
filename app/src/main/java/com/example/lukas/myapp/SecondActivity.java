@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.EditText;
 
+import java.util.jar.Attributes;
+
 public class SecondActivity extends AppCompatActivity  {
 
     private TextView showName;
@@ -25,6 +27,7 @@ public class SecondActivity extends AppCompatActivity  {
         String Name = bundle.getString("name");
         String Name1 = bundle.getString("name1");
         String Name2 = bundle.getString("name2");
+
 
         showName.setText(Name);
         showSname.setText(Name1);

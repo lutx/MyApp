@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
         radio1=(RadioButton) findViewById(R.id.radio1);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),SecondActivity.class);
                 //startActivity(intent);
-                intent.putExtra("name","Name");
-                intent.putExtra("name1","Sname");
-                intent.putExtra("name2","Age");
+                intent.putExtra("name","InName");
+                intent.putExtra("name1","InSname");
+                intent.putExtra("name2","InAge");
                 intent.putExtra("name3","radio");
                 intent.putExtra("name4","radio1");
                 startActivity(intent);

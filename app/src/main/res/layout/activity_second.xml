@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lukas.myapp.SecondActivity">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/showName"
         android:layout_width="wrap_content"
@@ -38,5 +40,5 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="182dp" />
-
+</LinearLayout>
 </android.support.constraint.ConstraintLayout>
