@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),SecondActivity.class);
-
+                startActivity(intent);
                 intent.putExtra("name","InName");
                 intent.putExtra("name1","InSname");
                 intent.putExtra("name2","InAge");
                 intent.putExtra("name3","radio");
                 intent.putExtra("name4","radio1");
 
-                startActivity(intent);
+              //  startActivity(intent);
 
             }
         });

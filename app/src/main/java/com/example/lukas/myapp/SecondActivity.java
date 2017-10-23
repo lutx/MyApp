@@ -18,7 +18,8 @@ public class SecondActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_second);
         showSname=(TextView) findViewById(R.id.showSname);
         showName=(TextView) findViewById(R.id.showName);
-        getIntent();
+        showAge=(TextView) findViewById(R.id.showAge);
+
 
         Bundle bundle = getIntent().getExtras();
         String Name = bundle.getString("name");
