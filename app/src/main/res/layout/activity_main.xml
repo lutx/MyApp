@@ -14,47 +14,33 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:text="Podaj Imie" />
 
 
         <EditText
             android:id="@+id/InName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/SName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Podaj Nazwisko"
-
-            />
+            android:background="@color/colorAccent"
+            android:hint="Imie :" />
 
 
         <EditText
             android:id="@+id/InSname"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:background="@color/colorAccent"
+            android:hint="Nazwisko :" />
 
-        <TextView
-            android:id="@+id/Age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Podaj Wiek" />
+
 
 
         <EditText
             android:id="@+id/InAge"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:hint="Wiek :"
+            android:background="@color/colorAccent"
+             />
 
 
         <RadioButton
@@ -73,13 +59,13 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:text="Klik" />
+            android:text="OK" />
 
     </LinearLayout>
 

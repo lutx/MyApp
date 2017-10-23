@@ -27,31 +27,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Name=(TextView) findViewById(R.id.Name);
-       InName=(EditText) findViewById(R.id.InName);
-        Sname =(TextView) findViewById(R.id.SName);
-        InSname=(EditText) findViewById(R.id.InSname);
-        Age=(TextView) findViewById(R.id.Age);
-        InAge=(EditText) findViewById(R.id.InAge);
-        button =(Button) findViewById(R.id.button);
+
+       Name=(EditText) findViewById(R.id.InName);
+        Sname=(EditText) findViewById(R.id.InSname);
+        Age=(EditText) findViewById(R.id.InAge);
+        button =(Button) findViewById(R.id.btn);
         radio=(RadioButton) findViewById(R.id.radio);
         radio1=(RadioButton) findViewById(R.id.radio1);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),SecondActivity.class);
-                startActivity(intent);
-                intent.putExtra("name","InName");
-                intent.putExtra("name1","InSname");
-                intent.putExtra("name2","InAge");
+                //startActivity(intent);
+                intent.putExtra("name","Name");
+                intent.putExtra("name1","Sname");
+                intent.putExtra("name2","Age");
                 intent.putExtra("name3","radio");
                 intent.putExtra("name4","radio1");
-
-              //  startActivity(intent);
+                startActivity(intent);
 
             }
-        });
+
+            });
     }
 
     public void onRadioButtonCliked(View view)

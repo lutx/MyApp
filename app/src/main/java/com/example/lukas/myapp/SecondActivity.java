@@ -10,7 +10,7 @@ public class SecondActivity extends AppCompatActivity  {
     private TextView showName;
     private TextView showSname;
     private TextView showAge;
-    private TextView showSex;
+   // private TextView showSex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
