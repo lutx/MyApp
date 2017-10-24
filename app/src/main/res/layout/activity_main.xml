@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,15 +13,13 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-
+        tools:layout_editor_absoluteY="8dp">
 
         <EditText
             android:id="@+id/InName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/icons"
             android:hint="Imie :" />
 
 
@@ -28,19 +27,18 @@
             android:id="@+id/InSname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:layout_marginTop="20px"
+            android:background="@color/icons"
             android:hint="Nazwisko :" />
-
-
 
 
         <EditText
             android:id="@+id/InAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Wiek :"
-            android:background="@color/colorAccent"
-             />
+            android:layout_marginTop="20px"
+            android:background="@color/icons"
+            android:hint="Wiek :" />
 
 
         <RadioButton

@@ -1,5 +1,6 @@
 package com.example.lukas.myapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -12,27 +13,39 @@ public class SecondActivity extends AppCompatActivity  {
     private TextView showName;
     private TextView showSname;
     private TextView showAge;
-   // private TextView showSex;
+    private TextView showSex;
+    private String fname;
+    private String sname;
+    private  String age;
+    private String rd;
+    private  String rd1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        showSname=(TextView) findViewById(R.id.showSname);
-        showName=(TextView) findViewById(R.id.showName);
-        showAge=(TextView) findViewById(R.id.showAge);
+        Intent intent =getIntent();
+        Bundle basket = intent.getExtras();
+        if (basket == null){
+            return;
+        }
 
+        fname= basket.getString("fname");
+        sname= basket.getString("sname");
+        age= basket.getString("age");
+        rd= basket.getString("rd");
+        rd1=basket.getString("rd1");
 
-        Bundle bundle = getIntent().getExtras();
-        String Name = bundle.getString("name");
-        String Name1 = bundle.getString("name1");
-        String Name2 = bundle.getString("name2");
+        showName = findViewById(R.id.showName);
+        showSname= findViewById(R.id.showSname);
+        showAge= findViewById(R.id.showAge);
+        showSex= findViewById(R.id.showSex);
 
-
-        showName.setText(Name);
-        showSname.setText(Name1);
-        showAge.setText(Name2);
-
+        showName.setText(fname);
+        showSname.setText(sname);
+        showAge.setText(age);
+        showSex.setText(rd);
+        showSex.setText(rd1);
     }
 
 

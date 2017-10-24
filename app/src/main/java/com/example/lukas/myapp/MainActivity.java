@@ -3,24 +3,24 @@ package com.example.lukas.myapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import java.util.jar.Attributes;
-
 public class MainActivity extends AppCompatActivity {
-    private TextView Name;
     private EditText InName;
-    private TextView Sname;
+    private EditText Sname;
     private EditText InSname;
-    private TextView Age;
     private EditText InAge;
     private RadioButton radio;
-    private  RadioButton radio1;
+    private RadioButton radio1;
     private Button button;
+    private String fname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,28 +28,40 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-       Name=(EditText) findViewById(R.id.InName);
-        Sname=(EditText) findViewById(R.id.InSname);
-        Age=(EditText) findViewById(R.id.InAge);
-        button =(Button) findViewById(R.id.btn);
-        radio=(RadioButton) findViewById(R.id.radio);
-        radio1=(RadioButton) findViewById(R.id.radio1);
+        InName=findViewById(R.id.InName);
+        InSname = findViewById(R.id.InSname);
+        InAge = findViewById(R.id.InAge);
+        button= findViewById(R.id.btn);
+        radio =findViewById(R.id.radio);
+        radio1=findViewById(R.id.radio1);
+
 
 
         button.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),SecondActivity.class);
-                //startActivity(intent);
-                intent.putExtra("name","InName");
-                intent.putExtra("name1","InSname");
-                intent.putExtra("name2","InAge");
-                intent.putExtra("name3","radio");
-                intent.putExtra("name4","radio1");
+                Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
+                //String sname = InSname.getText().toString();
+               // String fname = InName.getText().toString();
+               // String age = InAge.getText().toString();
+                //String rd = radio.getText().toString();
+                //String rd1 = radio1.getText().toString();
+
+                Bundle basket = new Bundle();
+                // Bundle basket1 = new Bundle();
+                //Bundle basket2 = new Bundle();
+                basket.putString("fname",InName.getText().toString());
+                basket.putString("sname",InSname.getText().toString());
+                basket.putString("age",InAge.getText().toString());
+                 basket.putString("rd",radio.getText().toString());
+                basket.putString("rd1",radio1.getText().toString());
+
+
+                intent.putExtras(basket);
+
                 startActivity(intent);
 
             }
-
             });
     }
 
@@ -69,4 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
     }
+
+
 }
