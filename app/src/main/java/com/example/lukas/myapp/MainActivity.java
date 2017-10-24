@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private EditText InName;
-    private EditText Sname;
     private EditText InSname;
     private EditText InAge;
     private RadioButton radio;
@@ -41,19 +40,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
-                //String sname = InSname.getText().toString();
-               // String fname = InName.getText().toString();
-               // String age = InAge.getText().toString();
-                //String rd = radio.getText().toString();
-                //String rd1 = radio1.getText().toString();
 
                 Bundle basket = new Bundle();
-                // Bundle basket1 = new Bundle();
-                //Bundle basket2 = new Bundle();
+
                 basket.putString("fname",InName.getText().toString());
                 basket.putString("sname",InSname.getText().toString());
                 basket.putString("age",InAge.getText().toString());
-                 basket.putString("rd",radio.getText().toString());
+                basket.putString("rd",radio.getText().toString());
                 basket.putString("rd1",radio1.getText().toString());
 
 
@@ -77,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.radio1:
                     if (checked)
-                        radio.setText("Mezczyzna");
+                        radio1.setText("Mezczyzna");
 
             }
     }

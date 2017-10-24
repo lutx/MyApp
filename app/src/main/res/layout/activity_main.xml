@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/accent1"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
@@ -19,6 +20,7 @@
             android:id="@+id/InName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
             android:background="@color/icons"
             android:hint="Imie :" />
 
@@ -27,7 +29,7 @@
             android:id="@+id/InSname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="40px"
             android:background="@color/icons"
             android:hint="Nazwisko :" />
 
@@ -36,25 +38,29 @@
             android:id="@+id/InAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="40px"
             android:background="@color/icons"
             android:hint="Wiek :" />
 
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonCliked"
-            android:text="Kobieta" />
+            <RadioButton
+                android:id="@+id/radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:onClick="onRadioButtonCliked"
+                android:text="Kobieta" />
 
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonCliked"
-            android:text="Mezczyzna" />
-
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonCliked"
+                android:text="Meżczyzna" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/btn"
@@ -63,7 +69,9 @@
             android:layout_marginBottom="28dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:text="OK" />
+            android:layout_marginTop="150px"
+            android:text="OK"
+            android:textColor="@color/accent" />
 
     </LinearLayout>
 

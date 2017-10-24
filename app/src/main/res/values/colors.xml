@@ -18,11 +18,11 @@
     <color name="primary_text3">#212121</color>
     <color name="secondary_text3">#757575</color>
     <color name="icons3">#FFFFFF</color>
-    <color name="divider3">#BDBDBD</color>
+    <color name="divider3">#bdbdbd</color>
     <color name="primary">#d11709</color>
     <color name="primary_dark">#D32F2F</color>
     <color name="primary_light">#FFCDD2</color>
-    <color name="accent">#4CAF50</color>
+    <color name="accent">#4caf50</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
     <color name="icons">#ffffff</color>

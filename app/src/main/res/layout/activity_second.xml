@@ -6,51 +6,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lukas.myapp.SecondActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/showName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/primary"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="33dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/divider3"
+        >
 
-    <TextView
-        android:id="@+id/showSname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20px"
-        android:text="TextView"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="77dp" />
+        <TextView
+            android:id="@+id/showName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="33dp" />
 
-    <TextView
-        android:id="@+id/showAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20px"
-        android:text="TextView"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="129dp" />
+        <TextView
+            android:id="@+id/showSname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:text="TextView"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="77dp" />
 
-    <TextView
-        android:id="@+id/showSex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20px"
-        android:text="TextView"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="182dp" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/showAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="129dp" />
+
+        <TextView
+            android:id="@+id/showSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:text="TextView"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="182dp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
