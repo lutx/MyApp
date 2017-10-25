@@ -18,7 +18,7 @@ import java.util.jar.Attributes;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
-public class SecondActivity extends AppCompatActivity  {
+public class SecondActivity extends AppCompatActivity {
 
     private TextView showName;
     private TextView showSname;
@@ -26,52 +26,52 @@ public class SecondActivity extends AppCompatActivity  {
     private TextView showSex;
     private String fname;
     private String sname;
-    private  String age;
+    private String age;
     private String sex;
     private Button btnHome;
-    private  Button btnNext;
+    private Button btnNext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Intent intent =getIntent();
+        Intent intent = getIntent();
         Bundle basket = intent.getExtras();
-        if (basket == null){return;}
+        if (basket == null) {
+            return;
+        }
 
-        fname= basket.getString("fname");
-        sname= basket.getString("sname");
-        age= basket.getString("age");
-        sex= basket.getString("sex");
+        fname = basket.getString("fname");
+        sname = basket.getString("sname");
+        age = basket.getString("age");
+        sex = basket.getString("sex");
 
         showName = findViewById(R.id.showName);
-        showSname= findViewById(R.id.showSname);
-        showAge= findViewById(R.id.showAge);
-        showSex= findViewById(R.id.showSex);
-        btnHome=findViewById(R.id.btnHome);
-        btnNext=findViewById(R.id.btnNext);
-        showName.setText("Twoje Imie to : "+ fname);
-        showSname.setText("Twoje Nazwisko to : "+ sname);
-        showAge.setText("Wiek : "+ age);
-        showSex.setText("Plec : "+ sex);
+        showSname = findViewById(R.id.showSname);
+        showAge = findViewById(R.id.showAge);
+        showSex = findViewById(R.id.showSex);
+        btnHome = findViewById(R.id.btnHome);
+        btnNext = findViewById(R.id.btnNext);
+        showName.setText("Twoje Imie to : " + fname);
+        showSname.setText("Twoje Nazwisko to : " + sname);
+        showAge.setText("Wiek : " + age);
+        showSex.setText("Plec : " + sex);
 
-        btnHome.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent i = new Intent (getApplicationContext(),MainActivity.class);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
-
-
-            }});
+            }
+        });
         btnNext.setOnClickListener(new View.OnClickListener()
 
-            {
-                public void onClick (View v) {
-                    Intent a = new Intent(getApplicationContext(), ShowProcesy.class);
-                    startActivity(a);
-
-
-                } });
+        {
+            public void onClick(View v) {
+                Intent a = new Intent(getApplicationContext(), ShowProcesy.class);
+                startActivity(a);
+            }
+        });
     }
-
 
 
 }
