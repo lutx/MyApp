@@ -14,6 +14,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     private EditText InName;
     private EditText InSname;
@@ -22,17 +27,21 @@ public class MainActivity extends AppCompatActivity {
     private String fname;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-
+    private TextView status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        radioGroup=(RadioGroup)findViewById(R.id.radioOptions);
-        InName=findViewById(R.id.InName);
+        radioGroup = (RadioGroup) findViewById(R.id.radioOptions);
+        InName = findViewById(R.id.InName);
         InSname = findViewById(R.id.InSname);
         InAge = findViewById(R.id.InAge);
-        button= findViewById(R.id.btn);
+        button = findViewById(R.id.btn);
+
+
+
+
 
         button.setOnClickListener (new View.OnClickListener() {
             @Override
@@ -49,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 basket.putString("sname",InSname.getText().toString());
                 basket.putString("age",InAge.getText().toString());
                 basket.putString("sex",selectedRadio);
-
+               // basket.putString("text",status.getText().toString());
                 Toast.makeText(MainActivity.this, "Twoja płeć to " + radioButton.getText(), Toast.LENGTH_SHORT).show();
 
                 intent.putExtras(basket);
@@ -57,5 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             });
+
     }
+
 }

@@ -3,10 +3,20 @@ package com.example.lukas.myapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.jar.Attributes;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 public class SecondActivity extends AppCompatActivity  {
 
@@ -18,7 +28,8 @@ public class SecondActivity extends AppCompatActivity  {
     private String sname;
     private  String age;
     private String sex;
-
+    private Button btnHome;
+    private  Button btnNext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +47,32 @@ public class SecondActivity extends AppCompatActivity  {
         showSname= findViewById(R.id.showSname);
         showAge= findViewById(R.id.showAge);
         showSex= findViewById(R.id.showSex);
-        showName.setText(fname);
-        showSname.setText(sname);
-        showAge.setText(age);
-        showSex.setText(sex);
+        btnHome=findViewById(R.id.btnHome);
+        btnNext=findViewById(R.id.btnNext);
+        showName.setText("Twoje Imie to : "+ fname);
+        showSname.setText("Twoje Nazwisko to : "+ sname);
+        showAge.setText("Wiek : "+ age);
+        showSex.setText("Plec : "+ sex);
 
+        btnHome.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent (getApplicationContext(),MainActivity.class);
+                startActivity(i);
+
+
+            }});
+        btnNext.setOnClickListener(new View.OnClickListener()
+
+            {
+                public void onClick (View v) {
+                    Intent a = new Intent(getApplicationContext(), ShowProcesy.class);
+                    startActivity(a);
+
+
+                } });
     }
+
+
+
 }
 
