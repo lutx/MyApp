@@ -10,31 +10,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText InName;
     private EditText InSname;
     private EditText InAge;
-    private RadioButton radio;
-    private RadioButton radio1;
     private Button button;
     private String fname;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        radioGroup=(RadioGroup)findViewById(R.id.radioOptions);
         InName=findViewById(R.id.InName);
         InSname = findViewById(R.id.InSname);
         InAge = findViewById(R.id.InAge);
         button= findViewById(R.id.btn);
-        radio =findViewById(R.id.radio);
-        radio1=findViewById(R.id.radio1);
-
-
 
         button.setOnClickListener (new View.OnClickListener() {
             @Override
@@ -43,37 +41,21 @@ public class MainActivity extends AppCompatActivity {
 
                 Bundle basket = new Bundle();
 
+                int selectedId=radioGroup.getCheckedRadioButtonId();
+                radioButton=(RadioButton)findViewById(selectedId);
+                String selectedRadio= radioButton.getText().toString();
+
                 basket.putString("fname",InName.getText().toString());
                 basket.putString("sname",InSname.getText().toString());
                 basket.putString("age",InAge.getText().toString());
-                basket.putString("rd",radio.getText().toString());
-                basket.putString("rd1",radio1.getText().toString());
+                basket.putString("sex",selectedRadio);
 
+                Toast.makeText(MainActivity.this, "Twoja płeć to " + radioButton.getText(), Toast.LENGTH_SHORT).show();
 
                 intent.putExtras(basket);
-
                 startActivity(intent);
 
             }
             });
     }
-
-    public void onRadioButtonCliked(View view)
-    {
-        boolean checked =( (RadioButton)view).isChecked();
-
-            switch (view.getId())
-            {
-                case R.id.radio:
-                    if (checked)
-                    radio.setText("Kobieta");
-                    break;
-                case R.id.radio1:
-                    if (checked)
-                        radio1.setText("Mezczyzna");
-
-            }
-    }
-
-
 }

@@ -44,21 +44,22 @@
 
         <RadioGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/radioOptions"
+            android:orientation="horizontal"
+
+            >
 
             <RadioButton
                 android:id="@+id/radio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40px"
-                android:onClick="onRadioButtonCliked"
                 android:text="Kobieta" />
 
             <RadioButton
                 android:id="@+id/radio1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onRadioButtonCliked"
                 android:text="Meżczyzna" />
         </RadioGroup>
 
