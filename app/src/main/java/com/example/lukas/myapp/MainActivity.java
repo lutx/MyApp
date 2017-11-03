@@ -28,32 +28,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioOptions);
-        InName = findViewById(R.id.InName);
-        InSname = findViewById(R.id.InSname);
-        InAge = findViewById(R.id.InAge);
-        button = findViewById(R.id.btn);
+        InName = (EditText) findViewById(R.id.InName);
+        InSname = (EditText) findViewById(R.id.InSname);
+        InAge = (EditText) findViewById(R.id.InAge);
+        button = (Button) findViewById(R.id.btn);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                if (!InName.getText().toString().equals("") && !InSname.getText().toString().equals("")) {
+                    Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle basket = new Bundle();
 
-                Bundle basket = new Bundle();
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    String selectedRadio = radioButton.getText().toString();
 
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectedId);
-                String selectedRadio = radioButton.getText().toString();
+                    basket.putString("fname", InName.getText().toString());
+                    basket.putString("sname", InSname.getText().toString());
+                    basket.putString("age", InAge.getText().toString());
+                    basket.putString("sex", selectedRadio);
 
-                basket.putString("fname", InName.getText().toString());
-                basket.putString("sname", InSname.getText().toString());
-                basket.putString("age", InAge.getText().toString());
-                basket.putString("sex", selectedRadio);
+                    Toast.makeText(MainActivity.this, "Twoja płeć to " + radioButton.getText(), Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(MainActivity.this, "Twoja płeć to " + radioButton.getText(), Toast.LENGTH_SHORT).show();
-
-                intent.putExtras(basket);
-                startActivity(intent);
-
+                    intent.putExtras(basket);
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                    Toast.makeText(MainActivity.this, "Podaj Imie i Nazwisko", Toast.LENGTH_SHORT).show();
             }
         });
 

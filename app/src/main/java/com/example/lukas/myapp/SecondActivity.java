@@ -46,12 +46,12 @@ public class SecondActivity extends AppCompatActivity {
         age = basket.getString("age");
         sex = basket.getString("sex");
 
-        showName = findViewById(R.id.showName);
-        showSname = findViewById(R.id.showSname);
-        showAge = findViewById(R.id.showAge);
-        showSex = findViewById(R.id.showSex);
-        btnHome = findViewById(R.id.btnHome);
-        btnNext = findViewById(R.id.btnNext);
+        showName = (TextView) findViewById(R.id.showName);
+        showSname = (TextView) findViewById(R.id.showSname);
+        showAge = (TextView) findViewById(R.id.showAge);
+        showSex = (TextView) findViewById(R.id.showSex);
+        btnHome = (Button) findViewById(R.id.btnHome);
+        btnNext = (Button) findViewById(R.id.btnNext);
         showName.setText("Twoje Imie to : " + fname);
         showSname.setText("Twoje Nazwisko to : " + sname);
         showAge.setText("Wiek : " + age);
@@ -60,7 +60,10 @@ public class SecondActivity extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
+                finish();
+
             }
         });
         btnNext.setOnClickListener(new View.OnClickListener()
