@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private TextView status;
+    private  RadioButton rButton;
+    private  RadioButton rButton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,16 @@ public class MainActivity extends AppCompatActivity {
         InSname = (EditText) findViewById(R.id.InSname);
         InAge = (EditText) findViewById(R.id.InAge);
         button = (Button) findViewById(R.id.btn);
+        rButton= (RadioButton) findViewById(R.id.radio);
+        rButton1= (RadioButton) findViewById(R.id.radio1);
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findViewById(selectedId);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!InName.getText().toString().equals("") && !InSname.getText().toString().equals("")) {
+                if (!InName.getText().toString().equals(" ") && !InSname.getText().toString().equals(" ")
+                        && !InAge.getText().toString().equals(" ") && !(rButton.isChecked()==rButton1.isChecked())) {
                     Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle basket = new Bundle();
@@ -50,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
                     basket.putString("age", InAge.getText().toString());
                     basket.putString("sex", selectedRadio);
 
-                    Toast.makeText(MainActivity.this, "Twoja płeć to " + radioButton.getText(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Witaj " + InName.getText()+" "+ InSname.getText(), Toast.LENGTH_SHORT).show();
 
                     intent.putExtras(basket);
                     startActivity(intent);
                     finish();
                 }
                 else
-                    Toast.makeText(MainActivity.this, "Podaj Imie i Nazwisko", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Podaj Imie , Nazwisko , Wiek ,Płeć", Toast.LENGTH_SHORT).show();
             }
         });
 
